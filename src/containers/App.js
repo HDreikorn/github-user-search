@@ -1,4 +1,4 @@
-import SearchBar from "../components/search";
+import SearchContainer from "./searchContainer";
 import "./App.css";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
@@ -10,7 +10,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <section className="App h-screen w-full flex justify-center items-center bg-gradient-to-r from-green-400 to-blue-500">
-        <SearchBar />
+        <SearchContainer />
       </section>
       <ReactQueryDevtools initialIsOpen />
     </QueryClientProvider>

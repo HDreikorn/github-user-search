@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
 import { useDebounce } from "use-debounce/lib";
+import SearchBar from "../components/search-bar";
 import { searchQueryRequest } from "../gqlRequests";
 
-export default function SearchBar() {
+export default function SearchContainer() {
   const [searchString, setSearchString] = useState("");
   const [debouncedFilter] = useDebounce(searchString, 500);
   const { data, isLoading } = useQuery(
@@ -22,18 +23,11 @@ export default function SearchBar() {
       className=" bg-white shadow-md rounded px-8 py-8 pt-8"
     >
       <div className="px-4 pb-4">
-        <input
-          type="text"
-          name="search"
-          id="search-github"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300 "
-          placeholder="Search GitHub Users"
-          value={searchString}
-          onChange={(e) => setSearchString(e.target.value)}
+        <SearchBar
+          searchString={searchString}
+          setSearchString={setSearchString}
         />
       </div>
-      <button type="submit">Search</button>
-      {console.log(data)}
     </form>
   );
 }
