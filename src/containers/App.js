@@ -1,8 +1,9 @@
-import SearchBar from "../components/search-bar";
+import SearchBar from "../components/search";
 import "./App.css";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 
+//React Query Config
 const queryClient = new QueryClient();
 
 function App() {
