@@ -4,6 +4,7 @@ import { useDebounce } from "use-debounce/lib";
 import SearchBar from "../components/search-bar";
 import { searchQueryRequest } from "../gqlRequests";
 import UserList from "../components/userList";
+import PaginationContainer from "../components/paginationContainer";
 
 export default function SearchContainer() {
   const [searchString, setSearchString] = useState("");
@@ -32,6 +33,7 @@ export default function SearchContainer() {
         </div>
       </form>
       <UserList data={data} />
+      <PaginationContainer hasNext={true} hasPrevious={false} />
     </div>
   );
 }
