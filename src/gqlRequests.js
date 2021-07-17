@@ -19,6 +19,8 @@ export async function searchQueryRequest(search) {
         edges {
           node {
             ... on User {
+              id
+              login
               avatarUrl
               name
               bio
