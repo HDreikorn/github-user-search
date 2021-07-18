@@ -1,10 +1,18 @@
 import Button from "./button";
 
-export default function PaginationContainer({ hasPrevious, hasNext }) {
+export default function PaginationContainer({ pageInfo, setChangePage }) {
   return (
     <div className="flex justify-between mt-3">
-      <Button label="Previous" disabled={!hasPrevious} />
-      <Button label="Next" disabled={!hasNext} />
+      <Button
+        label="Previous"
+        disabled={!pageInfo?.hasPreviousPage}
+        onClick={() => setChangePage([pageInfo?.startCursor, "PREV"])}
+      />
+      <Button
+        label="Next"
+        disabled={!pageInfo?.hasNextPage}
+        onClick={() => setChangePage([pageInfo?.endCursor, "NEXT"])}
+      />
     </div>
   );
 }
