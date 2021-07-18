@@ -1,5 +1,4 @@
 import { GraphQLClient, gql } from "graphql-request";
-const config = require("./config.json");
 
 const graphQLClient = new GraphQLClient(process.env.REACT_APP_API_ENDPOINT, {
   headers: {
