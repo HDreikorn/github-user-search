@@ -1,9 +1,9 @@
 import { GraphQLClient, gql } from "graphql-request";
 const config = require("./config.json");
 
-const graphQLClient = new GraphQLClient(config.API_ENDPOINT, {
+const graphQLClient = new GraphQLClient(process.env.REACT_APP_API_ENDPOINT, {
   headers: {
-    authorization: `Bearer ${config.GITHUB_TOKEN}`,
+    authorization: `Bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
   },
 });
 
