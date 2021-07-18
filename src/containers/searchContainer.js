@@ -26,16 +26,21 @@ export default function SearchContainer() {
   };
 
   return (
-    <div>
+    <div className="container">
       <form onSubmit={handleSearch}>
         <SearchBar />
       </form>
-      <h6>{`Total Users Found: ${data?.search.userCount}`}</h6>
-      <UserList data={data} />
-      <PaginationContainer
-        pageInfo={data?.search.pageInfo}
-        setChangePage={setChangePage}
-      />
+      {data && (
+        <div className="bg-white shadow-md rounded px-4 py-4 pt-4 mt-8">
+          <h5>{`Total Users Found: ${data?.search.userCount}`}</h5>
+          <hr className="mt-3" />
+          <UserList data={data} />
+          <PaginationContainer
+            pageInfo={data?.search.pageInfo}
+            setChangePage={setChangePage}
+          />
+        </div>
+      )}
     </div>
   );
 }
