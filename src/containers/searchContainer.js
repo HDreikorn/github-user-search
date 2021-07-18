@@ -30,6 +30,7 @@ export default function SearchContainer() {
       <form onSubmit={handleSearch}>
         <SearchBar />
       </form>
+      {process.env.REACT_APP_API_ENDPOINT}
       {data && (
         <div className="bg-white shadow-md rounded px-4 py-4 pt-4 mt-8">
           <h5>{`Total Users Found: ${data?.search.userCount}`}</h5>
